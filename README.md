@@ -1,6 +1,6 @@
-# User
+# User Validation
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2. The frontend is located at https://user-check.vercel.app/.
 
 ## Development server
 
