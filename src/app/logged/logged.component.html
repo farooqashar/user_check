@@ -1,0 +1,103 @@
+<style>
+  @keyframes mainTitle {
+    from {
+      color: red;
+    }
+    to {
+      color: white;
+    }
+    to {
+      color: blue;
+    }
+  }
+
+  @keyframes bkgrdc {
+    from {
+      background-color: lightcyan;
+    }
+    to {
+      background-color: darkslateblue;
+    }
+    to {
+      background-color: lightblue;
+    }
+  }
+
+  h1 {
+    color: darkblue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;
+    text-align: center;
+    animation-name: mainTitle;
+    animation-duration: 10s;
+    animation-iteration-count: 30;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+  input[type="text"]:focus {
+    border: 3px solid #555;
+  }
+
+  input:required {
+    border-color: green;
+    border-width: 3px;
+  }
+
+  input:required:invalid {
+    border-color: #c00000;
+  }
+
+  button {
+    padding: 5px 15px;
+    background: rgb(204, 204, 204);
+    border: 0 none;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+  }
+</style>
+
+<div>
+  <form (ngSubmit)="onSubmit()" #userform="ngForm">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="text"
+        class="form-control"
+        id="email"
+        placeholder="afarooq@mit.edu"
+        required
+        [(ngModel)]="model.email"
+        name="email"
+        #name="ngModel"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="text"
+        class="form-control"
+        id="password"
+        placeholder="password"
+        required
+        [(ngModel)]="model.password"
+        name="password"
+        #name="ngModel"
+      />
+    </div>
+
+    <button type="button" class="btn btn-default" (click)="checkUser()">
+      Sign In
+    </button>
+  </form>
+</div>
+
+<div [hidden]="submitted">
+  <h1>{{ message }}</h1>
+</div>
